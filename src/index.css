@@ -1,1 +1,50 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Gilmer";
+  src: url("./assets/Gilmer_Font/Gilmer_Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilmer";
+  src: url("./assets/Gilmer_Font/Gilmer_Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilmer";
+  src: url("./assets/Gilmer_Font/Gilmer_Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilmer";
+  src: url("./assets/Gilmer_Font/Gilmer_Heavy.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GilmerOutline";
+  src: url("./assets/Gilmer_Font/Gilmer_Outline.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-gilmer: "Gilmer", sans-serif;
+  --font-gilmer-outline: "GilmerOutline", sans-serif;
+}
+
+body {
+  font-family: "Gilmer", sans-serif;
+}
