@@ -8,6 +8,8 @@ interface Form {
   businessCategory: string;
 }
 
+const categories = ["Electronics", "Food", "Gadgets"];
+
 const PartnerForm = () => {
   const [formData, setFormData] = useState<Form>({
     businessName: "",
@@ -17,7 +19,9 @@ const PartnerForm = () => {
     businessCategory: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -118,6 +122,7 @@ const PartnerForm = () => {
               />
             </div>
 
+            {/* Dropdown with "Select Category" and borders */}
             <div className="mb-[16px] lg:mb-[28px] flex flex-col justify-center gap-[6px] lg:gap-[10px]">
               <label
                 className="text-[7px] leading-[120%] tracking-normal lg:text-[16px] lg:leading-[100%] lg:tracking-[0.5%] font-light text-[#1A1A1A]"
@@ -125,22 +130,31 @@ const PartnerForm = () => {
               >
                 Business Category
               </label>
-              <input
-                className="w-full h-[50px] lg:h-[80px] text-[12px] md:text-[16px] px-4 pr-[80px] md:pr-[200px] rounded-[10px] md:rounded-[20px] bg-[#E6E6E6] text-black placeholder:text-gray-500"
-                type="text"
+              <select
+                className="w-full h-[40px] md:h-[80px] text-[12px] md:text-[16px] px-4 pr-[80px] md:pr-[200px] rounded-[10px] md:rounded-[20px] bg-[#E6E6E6] text-black"
                 name="businessCategory"
                 value={formData.businessCategory}
                 onChange={handleChange}
-                placeholder="Select Category"
                 id="businessCategory"
-              />
+              >
+                <option value="">Select Category</option>
+                {categories.map((category, index) => (
+                  <option
+                    key={index}
+                    value={category}
+                    className="bg-[#E6E6E6] rounded-[20px]"
+                  >
+                    {category}
+                  </option>
+                ))}
+              </select>
             </div>
 
             <div className="w-full flex items-center justify-center">
               <button
                 type="submit"
                 onClick={handleSubmit}
-                className="lg:w-[183px] text-[12px] cursor-pointer w-[158px] h-[36px] md:h-[51px] mt-6 bg-[#FF5D3F] text-white font-medium rounded-[6px] md:rounded-[12px] hover:bg-[#e54d2e] transition-colors"
+                className="lg:w-[183px] text-[12px] lg:text-[16px] cursor-pointer w-[158px] h-[36px] md:h-[51px] mt-6 bg-[#FF5D3F] text-white font-medium rounded-[6px] md:rounded-[12px] hover:bg-[#e54d2e] transition-colors"
               >
                 Apply as vendor
               </button>
