@@ -1,3 +1,5 @@
+import { HamburgerIcon } from "lucide-react";
+
 const Navbar = () => {
   const navLinks = [
     { title: "What we offer", href: "offer" },
@@ -12,7 +14,7 @@ const Navbar = () => {
           <img src="/logo.png" className="w-[95px] h-[24px]" alt="Veta Logo" />
         </div>
 
-        <div className="">
+        <div className="hidden md:block">
           <ul className="flex flex-row gap-10">
             {navLinks.map((link, el) => (
               <li
@@ -25,10 +27,14 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className="">
+        <div className="hidden lg:block">
           <button className="w-[137px] h-[43px] text-white font-light rounded-[12px] bg-[#FF5D3F]">
             Join Waitlist
           </button>
+        </div>
+
+        <div className="block lg:hidden">
+          <HamburgerIcon />
         </div>
       </div>
     </nav>

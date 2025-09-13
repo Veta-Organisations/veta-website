@@ -2,7 +2,7 @@ const Hero = () => {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center gap-5">
       <div className="mx-auto max-w-6xl flex flex-col items-center justify-center gap-[25px] text-center px-4">
-        <div className="w-[296px] h-[26px] md:w-[349px] text-center md:h-[29px] rounded-[8px] text-[#FDFBF9] bg-[#FF5D3F] font-light md:text-[14px] text-[10px] leading-[100%] px-1 py-4  flex items-center">
+        <div className="w-[296px] h-[26px] md:w-[400px] text-center md:h-[29px] rounded-[8px] text-[#FDFBF9] bg-[#FF5D3F] font-light md:text-[14px] text-[10px] leading-[100%] px-2 py-4  flex items-center">
           <h1 className="w-full">
             🎉Early Access Now Open - Limited Spots Available
           </h1>

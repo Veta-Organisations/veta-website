@@ -10,6 +10,14 @@
 
 @font-face {
   font-family: "Gilmer";
+  src: url("./assets/Gilmer_Font/Gilmer_Regular.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilmer";
   src: url("./assets/Gilmer_Font/Gilmer_Medium.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
@@ -48,3 +56,5 @@
 body {
   font-family: "Gilmer", sans-serif;
 }
+
+@custom-variant hover (&:hover);

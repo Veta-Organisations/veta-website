@@ -1,7 +1,7 @@
 const Offer = () => {
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
-      <div className="relative w-full max-w-6xl">
+      <div className="relative w-full max-w-6xl px-4">
         <div className="relative flex justify-center">
           <img
             className="w-[223.87px] h-[268.48px] md:w-[717px] md:h-[859px] z-10"
