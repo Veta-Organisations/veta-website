@@ -10,8 +10,8 @@ const Hero = () => {
 
         <h1 className="leading-[100%] -tracking-[0.5% text-center] md:text-[64px] font-bold text-[36px]">
           Shop Now.
-          <span className="inline-block text-[#FF5D3F]">Pay Later.</span>Feel
-          Safe.
+          <br />
+          <span className="text-[#FF5D3F]">Pay Later.</span>Feel Safe.
         </h1>
         <p className="text-[#000000] md:text-[21px] font-light text-[12px] leading-[120%] max-w-3xl mx-auto mt-4">
           Veta makes shopping stress-free with instant delivery, flexible
