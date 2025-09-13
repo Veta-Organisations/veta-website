@@ -1,3 +1,6 @@
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-scroll";
+
 const Features = () => {
   const featuresOne = [
     {
@@ -35,8 +38,14 @@ const Features = () => {
     },
   ];
 
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/business");
+  };
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" id="offer">
       <div className="mx-auto max-w-6xl px-4 flex flex-col gap-[50px] items-center justify-center ">
         <div className="grid items-center lg:grid-cols-2 grid-cols-1 justify-center">
           <div className="lg:col-span-1 order-1 lg:order-2">
@@ -79,7 +88,9 @@ const Features = () => {
 
             <div className="">
               <button className="text-light text-white cursor-pointer lg:text-[16px] text-[12px] leading-[120%] lg:leading-[100%] tracking-[0px] lg:tracking-[-0.5px] w-[144px] h-[34px] lg:w-[168px] lg:h-[43px] lg:rounded-[12px] rounded-[6px] bg-[#FF5D3F]">
-                Join The Waitlist
+                <Link smooth={true} duration={500} to="waitlist">
+                  Join Waitlist
+                </Link>
               </button>
             </div>
           </div>
@@ -125,7 +136,10 @@ const Features = () => {
             </div>
 
             <div className="w-full flex lg:justify-end">
-              <button className="text-light text-white cursor-pointer lg:text-[16px] text-[12px] leading-[120%] lg:leading-[100%] tracking-[0px] lg:tracking-[-0.5px] w-[144px] h-[34px] md:w-[168px] md:h-[43px] font-light md:rounded-[12px] rounded-[6px] bg-[#1A1A1A]">
+              <button
+                onClick={handleClick}
+                className="text-light text-white cursor-pointer lg:text-[16px] text-[12px] leading-[120%] lg:leading-[100%] tracking-[0px] lg:tracking-[-0.5px] w-[144px] h-[34px] md:w-[168px] md:h-[43px] font-light md:rounded-[12px] rounded-[6px] bg-[#1A1A1A]"
+              >
                 Partner with Veta
               </button>
             </div>

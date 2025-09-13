@@ -14,7 +14,10 @@ const UserForm = () => {
   };
 
   return (
-    <main className="min-h-screen flex items-center justify-center">
+    <main
+      className="min-h-screen flex items-center justify-center"
+      id="waitlist"
+    >
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex flex-col space-y-6 md:space-y-8 items-center justify-center">
           <div className="bg-[#FF5D3F] w-[135px] text-center h-[24px] md:w-[145px] md:h-[29px] p-1 rounded-[6px] md:rounded-[8px]">

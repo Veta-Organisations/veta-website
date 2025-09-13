@@ -1,7 +1,11 @@
+import PartnerForm from "../components/PartnerForm";
+import PartnerNav from "../components/PartnerNav";
+
 const WaitlistPage = () => {
   return (
     <main>
-      <h1>hELLO</h1>
+      <PartnerNav />
+      <PartnerForm />
     </main>
   );
 };

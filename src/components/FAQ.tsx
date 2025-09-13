@@ -37,7 +37,7 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen" id="us">
       <div className="container mx-auto px-4 py-12 lg:py-20">
         <div className="flex flex-col items-center justify-center space-y-3 mb-12 lg:mb-16">
           <h1 className="text-[21px] lg:text-[47px] leading-[100%] lg:leading-[120%] text-center font-bold text-gray-900">

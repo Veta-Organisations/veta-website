@@ -1,4 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/business");
+  };
+
   return (
     <div className="min-h-screen flex flex-col justify-center items-center gap-5">
       <div className="mx-auto max-w-6xl flex flex-col items-center justify-center gap-[25px] text-center px-4">
@@ -55,7 +63,10 @@ const Hero = () => {
           <button className="text-white cursor-pointer font-light md:font-light md:text-[16px] bg-[#FF5D3F] md:w-[168px] md:h-[43px] w-[248px] h-[36px] md:rounded-[12px] rounded-[6px]">
             Join The Waitlist
           </button>
-          <button className="text-white cursor-pointer bg-[#1A1A1A] font-light md:font-light md:text-[16px] md:w-[168px] md:h-[43px] w-[248px] h-[36px] md:rounded-[12px] rounded-[6px]">
+          <button
+            onClick={handleClick}
+            className="text-white cursor-pointer bg-[#1A1A1A] font-light md:font-light md:text-[16px] md:w-[168px] md:h-[43px] w-[248px] h-[36px] md:rounded-[12px] rounded-[6px]"
+          >
             Become a vendor
           </button>
         </div>

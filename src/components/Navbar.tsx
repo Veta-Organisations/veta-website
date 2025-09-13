@@ -1,4 +1,5 @@
 import { HamburgerIcon } from "lucide-react";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   const navLinks = [
@@ -21,15 +22,19 @@ const Navbar = () => {
                 key={el}
                 className="text-[#1A1A1A] font-normal leading-[100%] -tracking-[0.5px] cursor-pointer md:text-[16px]"
               >
-                {link.title}
+                <Link to={link.href} smooth={true} duration={500}>
+                  {link.title}
+                </Link>
               </li>
             ))}
           </ul>
         </div>
 
         <div className="hidden lg:block">
-          <button className="w-[137px] h-[43px] text-white font-light rounded-[12px] bg-[#FF5D3F]">
-            Join Waitlist
+          <button className="w-[137px] h-[43px] cursor-pointer text-white font-light rounded-[12px] bg-[#FF5D3F]">
+            <Link smooth={true} duration={500} to="waitlist">
+              Join Waitlist
+            </Link>
           </button>
         </div>
 
