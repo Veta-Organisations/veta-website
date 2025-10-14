@@ -8,10 +8,23 @@ const UserForm = () => {
     console.log(e.target.value);
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    console.log("Email:", email);
-  };
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  event.preventDefault();
+
+  try {
+    const res = await fetch("http://localhost:8080/api/v1/customers", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }), // backend expects { email }
+    });
+
+    const data = await res.json();
+    console.log("Response:", data);
+  } catch (err) {
+    console.error("Error submitting waitlist:", err);
+  }
+};
+
 
   return (
     <main
