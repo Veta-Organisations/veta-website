@@ -1,5 +1,5 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
-
+import { motion } from "framer-motion";
 const UserForm = () => {
   const [email, setEmail] = useState<string>("");
 
@@ -14,7 +14,11 @@ const UserForm = () => {
   };
 
   return (
-    <main
+    <motion.main
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    viewport={{ once: true, amount: 0.3 }}
       className="min-h-screen flex items-center justify-center"
       id="waitlist"
     >
@@ -63,7 +67,7 @@ const UserForm = () => {
           </div>
         </div>
       </div>
-    </main>
+    </motion.main>
   );
 };
 

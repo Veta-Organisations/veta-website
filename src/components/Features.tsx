@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-scroll";
-
+import { motion } from "framer-motion";
 const Features = () => {
   const featuresOne = [
     {
@@ -48,11 +48,21 @@ const Features = () => {
     <div className="min-h-screen" id="offer">
       <div className="mx-auto max-w-6xl px-4 flex flex-col gap-[50px] items-center justify-center ">
         <div className="grid items-center lg:grid-cols-2 grid-cols-1 justify-center">
-          <div className="lg:col-span-1 order-1 lg:order-2">
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}          
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.5 }}
+          className="lg:col-span-1 order-1 lg:order-2">
             <img src="featuresOne.svg" alt="" />
-          </div>
+          </motion.div>
 
-          <div className="space-y-4 lg:col-span-1 order-2 lg:order-1">
+          <motion.div 
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}         
+                transition={{ duration: 1.5, ease: "easeOut" }}
+                viewport={{ once: true, amount: 0.5 }}
+          className="space-y-4 lg:col-span-1 order-2 lg:order-1">
             <div className="space-y-3">
               <h1 className="text-[21px] lg:text-[36px] font-medium leading-[120%]">
                 The Smarter Way to Shop & Pay
@@ -93,15 +103,25 @@ const Features = () => {
                 </Link>
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         <div className="grid items-center lg:grid-cols-2 grid-cols-1 justify-center">
-          <div className="lg:col-span-1 order-2 lg:order-1">
+          <motion.div 
+            initial={{ opacity: 0, x: -100 }}           
+            whileInView={{ opacity: 1, x: 0 }}        
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.5 }}
+          className="lg:col-span-1 order-2 lg:order-1">
             <img src="featuresTwo.svg" alt="" />
-          </div>
+          </motion.div>
 
-          <div className="space-y-4 lg:col-span-1 order-2">
+          <motion.div 
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}         
+                transition={{ duration: 1.5, ease: "easeOut" }}
+                viewport={{ once: true, amount: 0.5 }}
+          className="space-y-4 lg:col-span-1 order-2">
             <div className="space-y-3">
               <h1 className="text-[21px] lg:text-right lg:text-[36px] font-medium leading-[120%]">
                 More Shoppers. More Sales.
@@ -143,7 +163,7 @@ const Features = () => {
                 Partner with Veta
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

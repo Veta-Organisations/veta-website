@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
-
+import { motion } from "framer-motion";
 interface FAQItem {
   question: string;
   ans: string;
@@ -39,18 +39,27 @@ const FAQ: React.FC = () => {
   return (
     <main className="min-h-screen" id="us">
       <div className="container mx-auto px-4 py-12 lg:py-20">
-        <div className="flex flex-col items-center justify-center space-y-3 mb-12 lg:mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
+        className="flex flex-col items-center justify-center space-y-3 mb-12 lg:mb-16">
           <h1 className="text-[21px] lg:text-[47px] leading-[100%] lg:leading-[120%] text-center font-bold text-gray-900">
             Questions? <br /> We've Got Answers.
           </h1>
           <p className="text-[9px] lg:text-[21px] leading-[120%] tracking-[0%] font-light text-gray-700 text-center max-w-2xl">
             Everything you need to know about using VETA as a shopper or vendor.
           </p>
-        </div>
+        </motion.div>
 
         <div className="max-w-3xl mx-auto space-y-4">
           {faqItems.map((item, index) => (
-            <div
+            <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}
               key={index}
               className="bg-white rounded-lg overflow-hidden transition-all duration-200 cursor-pointer"
             >
@@ -82,7 +91,7 @@ const FAQ: React.FC = () => {
                   )}
                 </div>
               </button>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
