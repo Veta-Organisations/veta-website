@@ -6,62 +6,73 @@ const Footer = () => {
     {
       name: "Twitter",
       icon: (
-        <FaXTwitter className="w-[6.95px] h-[6.95px] lg:w-[20px] lg:h-[20px]" />
+        <FaXTwitter className="w-[16px] h-[16px] lg:w-[28px] lg:h-[28px]" />
       ),
       link: "",
     },
     {
       name: "Instagram",
       icon: (
-        <InstagramIcon className="w-[6.95px] h-[6.95px] lg:w-[20px] lg:h-[20px]" />
+        <InstagramIcon className="w-[16px] h-[16px] lg:w-[28px] lg:h-[28px]" />
       ),
       link: "",
     },
     {
       name: "Linkedin",
       icon: (
-        <Linkedin className="w-[6.95px] h-[6.95px] lg:w-[20px] lg:h-[20px]" />
+        <Linkedin className="w-[16px] h-[16px] lg:w-[28px] lg:h-[28px]" />
       ),
       link: "",
     },
   ];
 
   return (
-    <main className="min-h-contain">
-      <div className="mx-auto max-w-6xl px-5">
-        <div className="p-5 pb-[13.35px] lg:pb-[80px] flex border-t-[1px] border-[#1A1A1A]">
-          <div className="flex items-center gap-[12px]">
+  <main id="footer">
+      <div className="mx-auto max-w-6xl px-[20px] py-[17px] md:py-[30px]">
+        <div className="border-t border-black/24 pb-[14px]" />
+
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between md:py-[10px] md:px-[30px] gap-3">
+          {/* Logo + text (left) */}
+          <div className="flex items-center gap-[15px]">
             <img
-              className="w-[10.61px] h-[6.95px] lg:w-[36.62px] lg:h-[24px]"
+              className="w-7 h-7 md:w-[36.62px] md:h-[24px]"
               src="/footer-logo.svg"
               alt="Veta Logo"
             />
-            <h3 className="lg:text-[16px] text-[4.6px] font-light leading-[100%] tracking-[-0.5%]">
+            <h3 className="text-[12px] lg:text-[18px] font-light leading-[100%] tracking-[-0.5%]">
               © 2025 Veta. Life, Reimagined.
             </h3>
           </div>
 
-          <div className="ml-auto mr-[20px] flex gap-[8.69px] lg:gap-[30px]">
-            {["Privacy Policy", "Terms of service", "Contact"].map((el, i) => (
-              <ul key={i} className="">
-                <li className="font-light text-[4.64px] lg:text-[16px]">
+          {/* Right group: links + icons */}
+          <div className="flex flex-col md:flex-row items-start md:items-center md:gap-[40px] gap-4">
+            {/* Links */}
+            <ul className="flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-[24px]">
+              {["Privacy Policy", "Terms of Service", "Contact"].map((el, i) => (
+                <li
+                  key={i}
+                  className="font-light text-[12px] cursor-pointer hover:underline"
+                >
                   {el}
                 </li>
-              </ul>
-            ))}
-          </div>
+              ))}
+            </ul>
 
-          <div className="flex items-center justify-center gap-[5.8px] lg:gap-[20px]">
-            {socialLinks.map((el, i) => (
-              <a href={el.link} key={i}>
-                {el.icon}
-              </a>
-            ))}
+            {/* Social icons */}
+            <div className="flex items-center gap-[10px] md:gap-[16px]">
+              {socialLinks.map((el, i) => (
+                <a href={el.link} key={i} target="_blank" rel="noreferrer">
+                  {el.icon}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
     </main>
-  );
+);
+
+
 };
 
 export default Footer;

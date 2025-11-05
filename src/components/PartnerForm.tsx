@@ -8,7 +8,7 @@ interface Form {
   businessCategory: string;
 }
 
-const categories = ["Electronics", "Food", "Gadgets"];
+const categories = ["Food", "Fashion", "Groceries"];
 
 const PartnerForm = () => {
   const [formData, setFormData] = useState<Form>({
@@ -29,11 +29,29 @@ const PartnerForm = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission here
-  };
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  try {
+    const res = await fetch("http://localhost:8080/api/v1/vendors", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        businessName: formData.businessName,
+        contactPerson: formData.contactPerson,
+        email: formData.businessEmail, // backend expects 'email', not 'businessEmail'
+        phoneNumber: formData.phoneNumber,
+        businessCategory: formData.businessCategory,
+      }),
+    });
+
+    const data = await res.json();
+    console.log("Response:", data);
+  } catch (err) {
+    console.error("Error submitting form:", err);
+  }
+};
+
 
   return (
     <main className="min-h-screen flex flex-col items-center gap-[71px] justify-center pt-[100px] pb-10 md:pt-[120px] px-4">

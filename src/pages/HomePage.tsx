@@ -9,8 +9,9 @@ import Footer from "../components/Footer";
 const HomePage = () => {
   return (
     <main
-      className="relative min-h-screen bg-cover bg-no-repeat bg-center overflow-hidden"
-      style={{ backgroundImage: "url('/bg.png')" }}
+      className="relative min-h-screen bg-cover bg-no-repeat bg-center overflow-hidden bg-[#FDFBF9] md:bg-[url('/bg.png')]
+"
+      // style={{ backgroundImage: "url('/bg.png')" }}
     >
       {/* Watermark logo overlay */}
       <img
