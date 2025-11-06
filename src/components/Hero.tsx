@@ -1,16 +1,38 @@
 import { useNavigate } from "react-router-dom";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
 
 const Hero = () => {
   const navigate = useNavigate();
-
+  const controls = useAnimation();
+  const heroControls = useAnimation();
   const handleClick = () => {
     navigate("/business");
   };
 
+  useEffect(() => {
+
+    controls.start({
+      x: 300,
+      transition: { duration: 1.5, ease: "easeInOut" },
+    });
+    const timer = setTimeout(() => {
+      heroControls.start({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 1.5, ease: "easeOut" },
+      });
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, [controls, heroControls]);
+
   return (
-    <div className="pt-[40px] md:pt-[170px] min-h-[581px] md:min-h-screen flex flex-col items-center gap-[25px]  ">
-      <div className="mx-auto max-w-6xl flex flex-col items-center justify-center gap-[25px] text-center px-4">
-        <div className="w-[296px] h-[26px] md:w-[400px] text-center md:h-[29px] rounded-[12px] text-[#FDFBF9] bg-[#FF5D3F] font-light md:text-[14px] text-[10px] leading-[100%] px-2 py-4 flex items-center">
+    <div className="pt-10 md:pt-[170px] min-h-[581px] md:min-h-screen flex flex-col items-center gap-[25px]  ">
+      <motion.div 
+      initial={{ opacity: 0, y: 30 }}
+      animate={heroControls}
+      className="mx-auto max-w-6xl flex flex-col items-center justify-center gap-[25px] text-center px-4">
+        <div className="w-[296px] h-[26px] md:w-[400px] text-center md:h-[29px] rounded-xl text-[#FDFBF9] bg-[#FF5D3F] font-light md:text-[14px] text-[10px] leading-[100%] px-2 py-4 flex items-center">
           <h1 className="w-full">
             🎉Early Access Now Open - Limited Spots Available
           </h1>
@@ -74,7 +96,7 @@ const Hero = () => {
             Become a vendor
           </button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

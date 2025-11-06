@@ -1,4 +1,5 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
+import { motion } from "framer-motion";
 
 const UserForm = () => {
   const [email, setEmail] = useState<string>("");
@@ -27,17 +28,22 @@ const UserForm = () => {
 
 
   return (
-    <main
+    <motion.main
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.3 }}
       className="flex items-center justify-center pt-10 md:pt-22"
       id="waitlist"
     >
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex flex-col space-y-6 md:space-y-8 items-center justify-center">
-          <div className="bg-[#FF5D3F] w-[135px] text-center h-[24px] md:w-[145px] md:h-[29px] p-1 rounded-[6px] md:rounded-[8px] justify-center">
-            <h1 className="text-white text-[12px] md:text-[14px] leading-[120%]">
-              Join the Revolution
-            </h1>
+          <div className="bg-[#FF5D3F] w-[135px] h-[24px] md:w-[145px] md:h-[29px] rounded-[6px] md:rounded-[8px] flex    items-center justify-center">
+          <h1 className="text-white text-[12px] md:text-[14px] leading-[120%] text-center">
+            Join the Revolution
+          </h1>
           </div>
+
 
           <div className="text-center space-y-3 max-w-[301px] md:max-w-[846px]">
             <h1 className="md:text-[48px] font-bold text-[28px] leading-[120%] md:leading-[100%] text-center max-w-[238px] md:max-w-[500px] mx-auto">
@@ -73,7 +79,7 @@ const UserForm = () => {
           </div>
         </div>
       </div>
-    </main>
+    </motion.main>
   );
 };
 
